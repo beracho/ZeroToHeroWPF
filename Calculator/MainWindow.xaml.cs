@@ -139,7 +139,12 @@ namespace Calculator
                 switch(_operation)
                 {
                     case SelectedOperator.Division:
-                        resultLabel.Content = _lastNumber / newNumber;
+                        if(newNumber == 0)
+                        {
+                            MessageBox.Show("Division by 0 is not supported", "Wrong operation", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                            resultLabel.Content = "0";
+                        } else
+                            resultLabel.Content = _lastNumber / newNumber;
                         break;
                     case SelectedOperator.Multiplication:
                         resultLabel.Content = _lastNumber * newNumber;

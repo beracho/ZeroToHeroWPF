@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="400" Background="Gray">
+        Title="MainWindow" Height="650" Width="400" Background="{StaticResource thirdColor}">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -23,125 +23,99 @@
         </Grid.RowDefinitions>
         <Label Name="resultLabel"
                Content="0"
-               Background="White"
                HorizontalAlignment="Right"
-               VerticalAlignment="Bottom"
-               FontSize="60"
+               VerticalAlignment="Center"
                Grid.ColumnSpan="4"/>
         <Button Name="ACButton"
                 Content="AC" Click="ACButton_Click"
-                Margin="5" Background="Pink"
-                FontSize="20"
+                Style="{StaticResource operationsButtonStyle}"
                 Grid.Row="1"
                 Grid.Column="0"/>
         <Button Name="signButton"
                 Content="+/-" Click="signButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
+                Style="{StaticResource operationsButtonStyle}"
                 Grid.Row="1"
                 Grid.Column="1"/>
         <Button Name="percentageButton"
                 Content="%" Click="operationButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
+                Style="{StaticResource operationsButtonStyle}"
                 Grid.Row="1"
                 Grid.Column="2"/>
         <Button Name="divisionButton"
                 Content="/" Click="operationButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
+                Style="{StaticResource operationsButtonStyle}"
                 Grid.Row="1"
                 Grid.Column="3"/>
         <Button Name="sevenButton"
                 Content="7" Click="numberButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
                 Grid.Row="2"
                 Grid.Column="0"/>
         <Button Name="eigthButton"
                 Content="8" Click="numberButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
                 Grid.Row="2"
                 Grid.Column="1"/>
         <Button Name="nineButton"
                 Content="9" Click="numberButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
                 Grid.Row="2"
                 Grid.Column="2"/>
         <Button Name="multiplicationButton"
                 Content="*" Click="operationButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
+                Style="{StaticResource operationsButtonStyle}"
                 Grid.Row="2"
                 Grid.Column="3"/>
         <Button Name="fourButton"
                 Content="4" Click="numberButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
                 Grid.Row="3"
                 Grid.Column="0"/>
         <Button Name="fiveButton"
                 Content="5" Click="numberButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
                 Grid.Row="3"
                 Grid.Column="1"/>
         <Button Name="sixButton"
                 Content="6" Click="numberButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
                 Grid.Row="3"
                 Grid.Column="2"/>
         <Button Name="minusButton"
                 Content="-" Click="operationButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
+                Style="{StaticResource operationsButtonStyle}"
                 Grid.Row="3"
                 Grid.Column="3"/>
         <Button Name="oneButton"
                 Content="1" Click="numberButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
                 Grid.Row="4"
                 Grid.Column="0"/>
         <Button Name="twoButton"
                 Content="2" Click="numberButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
                 Grid.Row="4"
                 Grid.Column="1"/>
         <Button Name="threeButton"
                 Content="3" Click="numberButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
                 Grid.Row="4"
                 Grid.Column="2"/>
         <Button Name="plusButton"
                 Content="+" Click="operationButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
+                Style="{StaticResource operationsButtonStyle}"
                 Grid.Row="4"
                 Grid.Column="3"/>
         <Button Name="zeroButton"
                 Content="0" Click="numberButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
                 Grid.Row="5"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"/>
         <Button Name="periodButton"
                 Content="." Click="numberButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
                 Grid.Row="5"
                 Grid.Column="2"/>
         <Button Name="equalsButton"
                 Content="=" Click="equalsButton_Click"
-                Margin="5" Background="Azure"
-                FontSize="20"
+                Style="{StaticResource equalButtonStyle}"
                 Grid.Row="5"
-                Grid.Column="3"/>
+                Grid.Column="3">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="25"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Window>
