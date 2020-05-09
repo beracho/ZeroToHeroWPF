@@ -19,5 +19,12 @@ namespace DesktopContactsApp.Classes
         {
             return $"{Name} - {Email} - {Phone}";
         }
+
+        public Contact()
+        {
+            Name = "Name Lastname";
+            Email = "asd@asd.as";
+            Phone = "123123123";
+        }
     }
 }
