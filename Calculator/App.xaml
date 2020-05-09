@@ -5,13 +5,14 @@
              StartupUri="MainWindow.xaml">
 
     <Application.Resources>
-        <SolidColorBrush x:Key="primaryColor" Color="Orange"/>
+        <SolidColorBrush x:Key="primaryColor" Color="DarkOrange"/>
         <SolidColorBrush x:Key="secondColor" Color="LightSlateGray"/>
         <SolidColorBrush x:Key="thirdColor" Color="White"/>
+        <SolidColorBrush x:Key="fourthColor" Color="Black"/>
 
         <Style TargetType="Button">
-            <Setter Property="Foreground" Value="{StaticResource thirdColor}"/>
-            <Setter Property="Background" Value="{StaticResource secondColor}"/>
+            <Setter Property="Foreground" Value="{StaticResource fourthColor}"/>
+            <Setter Property="Background" Value="{StaticResource thirdColor}"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="FontSize" Value="38"/>
             <Setter Property="Margin" Value="5"/>
@@ -19,7 +20,7 @@
 
         <Style TargetType="Button" x:Key="operationsButtonStyle">
             <Setter Property="Foreground" Value="{StaticResource primaryColor}"/>
-            <Setter Property="Background" Value="{StaticResource secondColor}"/>
+            <Setter Property="Background" Value="{StaticResource thirdColor}"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="FontSize" Value="38"/>
             <Setter Property="Margin" Value="5"/>
