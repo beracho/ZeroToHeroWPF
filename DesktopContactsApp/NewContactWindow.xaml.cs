@@ -28,7 +28,6 @@ namespace DesktopContactsApp
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: Save contact
             Contact contact = new Contact()
             {
                 Name = nameTextBox.Text,

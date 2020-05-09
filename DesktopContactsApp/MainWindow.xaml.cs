@@ -22,9 +22,12 @@ namespace DesktopContactsApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Contact> contacts;
         public MainWindow()
         {
             InitializeComponent();
+
+            contacts = new List<Contact>();
 
             ReadDatabase();
         }
@@ -38,11 +41,10 @@ namespace DesktopContactsApp
 
         void ReadDatabase()
         {
-            List<Contact> contacts;
             using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(App.databasePath))
             {
                 conn.CreateTable<Contact>();
-                contacts = conn.Table<Contact>().ToList();
+                contacts = conn.Table<Contact>().ToList().OrderBy(c => c.Name).ToList();
             }
             if (contacts != null)
             {
@@ -55,6 +57,26 @@ namespace DesktopContactsApp
                 //}
                 contactsListView.ItemsSource = contacts;
             }
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox searchTextBox = sender as TextBox;
+
+            var filteredList = contacts.Where(c => c.Name.ToLower().Contains(searchTextBox.Text)).ToList();
+
+            contactsListView.ItemsSource = filteredList;
+        }
+
+        private void contactsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Contact selectedContact = (Contact)contactsListView.SelectedItem;
+            if(selectedContact != null)
+            {
+                ContactDetailWindow contactDetailsWindow = new ContactDetailWindow(selectedContact);
+                contactDetailsWindow.ShowDialog();
+            }
+            ReadDatabase();
         }
     }
 }
