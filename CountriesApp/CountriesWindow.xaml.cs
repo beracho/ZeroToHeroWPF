@@ -24,6 +24,7 @@ namespace CountriesApp
         public CountriesWindow(List<Country> countries)
         {
             InitializeComponent();
+            countriesListView.Items.Clear();
             countriesListView.ItemsSource = countries;
         }
 
